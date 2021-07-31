@@ -12,7 +12,7 @@ export const Navbar = () =>{
 const Nav = styled.nav`
     padding-top: 2em;
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
