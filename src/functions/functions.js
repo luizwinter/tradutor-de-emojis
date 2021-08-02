@@ -59,7 +59,13 @@ export function Translate(){
                 case 12:
                     text_translated.push('Fui para empresa ');
     
-                break;      };
+                break;  
+                case 13:
+                    text_translated.push('Vim andando de boa ');
+    
+                break;
+                };
+
 
 
         }else if(i == 1 || i +1 < txt_to_translate.length){
@@ -109,7 +115,11 @@ export function Translate(){
                 case 12:
                     text_translated.push('depois fui para empresa ');
 
-                break;      };        
+                break;      
+                case 13:
+                    text_translated.push('dei uma andada ');
+    
+                break;            };        
 
             }else{
 
@@ -156,9 +166,13 @@ export function Translate(){
         
                     break;
                     case 12:
-                        text_translated.push('e por fim fui para empresa.');
+                        text_translated.push('e por fim cheguei na empresa.');
         
-                    break;};                 
+                    break;
+                    case 13:
+                        text_translated.push('e por fim vim andando.');
+        
+                    break;                };                 
                 };
                 i+=1;
 

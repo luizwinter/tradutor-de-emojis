@@ -24,6 +24,7 @@ export const Section2 = ()=> {
                 <button onClick={()=> InsertEmoji(2)}>👋🏻</button>
                 <button onClick={()=> InsertEmoji(3)}>🤚🏻</button>
                 <button onClick={()=> InsertEmoji(4)}>🧑🏻</button>
+                <button onClick={()=> InsertEmoji(13)}>🚶🏾</button>
                 <button onClick={()=> InsertEmoji(5)}>🏃🏻‍♂️</button>
                 <button onClick={()=> InsertEmoji(6)}>🙋🏻‍♂️</button>
                 <button onClick={()=> InsertEmoji(7)}>🥣</button>
@@ -64,7 +65,6 @@ const TextArea = styled.textarea`
     border: 4px solid #AAC3B7;
     outline: none;
     resize: none;
-    color: white;
     font-size: 1.5rem;
 
 
