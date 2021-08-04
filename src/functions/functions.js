@@ -1,8 +1,9 @@
 var txt_to_translate = [];
 var text_translated = [];
 
-export function InsertEmoji(emoji){
+export function InsertEmoji(emoji, display_emoji){
     txt_to_translate.push(emoji);
+    document.getElementById("TextArea").value += display_emoji;
    
 };
 

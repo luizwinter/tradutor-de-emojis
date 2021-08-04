@@ -7,6 +7,9 @@ import { Footer } from "./Footer";
 
 
 export const Home = () =>{
+
+ 
+    
     return(
         <>
         <Navbar/>
@@ -15,7 +18,7 @@ export const Home = () =>{
         </Main>
         <Section2/>
         <Footer/>
-
+    
         </>
     );
 };
