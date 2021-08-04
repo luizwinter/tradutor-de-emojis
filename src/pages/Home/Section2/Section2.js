@@ -1,12 +1,30 @@
 import styled from "styled-components";
 import Aos from "aos";
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
-import { InsertEmoji, Translate } from "../../../functions/functions";
+import { useEffect, useState } from "react";
+import { InteractDiv } from "./InteractDiv/InteractDiv";
+import { Translate } from "../../../functions/functions";
+import Loading from "../../../components/Loading";
 
 
 
 export const Section2 = ()=> {
+
+    const loading = ()=>{
+        document.getElementById("btn_submit").style.display="none";
+        setsectionState(<Loading />)
+        setTimeout(function(){ 
+            setsectionState(<InteractDiv/ >)
+            Translate(); 
+            document.getElementById("btn_submit").style.display="block";
+
+        }, 2000);
+
+
+        
+    };
+
+    const [sectionState, setsectionState] = useState(<InteractDiv />);
 
         useEffect(()=>{
             Aos.init({
@@ -17,27 +35,9 @@ export const Section2 = ()=> {
     return(
         
         <Wrapper data-aos="fade-up">
-            <h2>Vou decifrar seu código</h2>
-            <p>Digite aqui seu enigma:</p>
-            <Row>
-                <button onClick={()=> InsertEmoji(1)}>👆🏻</button>
-                <button onClick={()=> InsertEmoji(2)}>👋🏻</button>
-                <button onClick={()=> InsertEmoji(3)}>🤚🏻</button>
-                <button onClick={()=> InsertEmoji(4)}>🧑🏻</button>
-                <button onClick={()=> InsertEmoji(13)}>🚶🏾</button>
-                <button onClick={()=> InsertEmoji(5)}>🏃🏻‍♂️</button>
-                <button onClick={()=> InsertEmoji(6)}>🙋🏻‍♂️</button>
-                <button onClick={()=> InsertEmoji(7)}>🥣</button>
-                <button onClick={()=> InsertEmoji(8)}>🍔</button>
-                <button onClick={()=> InsertEmoji(9)}>☕️</button>
-                <button onClick={()=> InsertEmoji(10)}>🚓</button>
-                <button onClick={()=> InsertEmoji(11)}>🚗</button>
-                <button onClick={()=> InsertEmoji(12)}>🏙</button>
-                </Row>
+            {sectionState}
+            <Btn id="btn_submit" type="submit" onClick={loading}>Enviar</Btn>
 
-            <TextArea id="TextArea" rows="10" cols="70" disabled></TextArea>
-
-            <Btn type="submit" onClick={Translate}>Enviar</Btn>
         </Wrapper>
         )
 };
@@ -50,23 +50,6 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 50vw;
-
-`;
-
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-`;
-
-const TextArea = styled.textarea`
-    border: 4px solid #AAC3B7;
-    outline: none;
-    resize: none;
-    font-size: 1.5rem;
-
 
 `;
 
